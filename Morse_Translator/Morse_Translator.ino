@@ -8,7 +8,7 @@ void setup() {
 }
 
 void loop() {
-    Serial.println("Enter yout word");   
+    Serial.println("Enter your word");   
     TranslateWord = Serial.readString();
     Serial.println(TranslateWord); {
         traductor.translate(TranslateWord);
