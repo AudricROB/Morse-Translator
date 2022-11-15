@@ -35,6 +35,7 @@ void Traductor::traductor(String word) {
             }
         }
     }
+
     TurnOnLed(1200, false);                                                             // pause time after end of word
 }
 
