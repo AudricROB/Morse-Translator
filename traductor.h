@@ -7,7 +7,7 @@ private:
     const char short[2] = "c";                                      //short time
     unsigned long currentTime = 0;                                  //use function millis
     unsigned long previousTime = 0;
-    bool TurnOnLed(int duree, bool ledState);
+    bool TurnOnLed(int period, bool ledState);
     String Traductorletter[27][2] = {                               //create array with letter and morseletter
          {"a","cl"},
          {"b","lccc"},
