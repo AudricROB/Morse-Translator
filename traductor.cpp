@@ -1,45 +1,51 @@
-#include <Arduino.h>
+#include "Traductor.h"
 
-class Traductor {
+Traductor::Traductor() {
+}
 
-private:
-    char charLetter;                                                //transform letter into array
-    const char short[2] = "c";                                      //short time
-    unsigned long currentTime = 0;                                  //use function millis
-    unsigned long previousTime = 0;
-    bool TurnOnLed(int duree, bool ledState);
-    String Traductorletter[27][2] = {                               //create array with letter and morseletter
-         {"a","cl"},
-         {"b","lccc"},
-         {"c","lclc"},
-         {"d","lcc"},
-         {"e","c"},
-         {"f","cclc"},
-         {"g","llc"},
-         {"h","cccc"},
-         {"i","cc"},
-         {"j","clll"},
-         {"k","lcl"},
-         {"l","clcc"},
-         {"m","ll"},
-         {"n","lc"},
-         {"o","lll"},
-         {"p","cllc"},
-         {"q","llcl"},
-         {"r","clc"},
-         {"s","ccc"},
-         {"t","l"},
-         {"u","ccl"},
-         {"v","cccl"},
-         {"w","cll"},
-         {"x","lccl"},
-         {"y","lcll"},
-         {"z","llcc"},
-         {" ",""},
-    };
-};
+void Traductor::traductor(String word) {
+    word.toLowerCase();                                                                 // lowercase word
+    for (int letter = 0; letter < word.length(); letter++) {                            // all letter in the word 
+        for (int i = 0; i <= 27; i++) {
+            charLetter = Traductorletter[i][0].charAt(0);
+            if (word[letter] == charLetter) {                                           // check if letter of the word is equal to the ith occurrence of the table
+                if (i == 26) {                                                          // space
+                    Serial.println("New Word");
+                    TurnOnLed(2400, false);                                             // led off, delay = 2400ms                    
+                }
 
-public:
-	Traductor();
-	~Tradcutor();
-	void traductor(string word);  
+                else {
+                    Serial.print("Letter : ");
+                    Serial.println(Traductorletter[i][0]);
+                    for (int k = 0; k < Traductorletter[i][1].length(); k++) {          // all letter of morse translation
+                        if (Traductorletter[i][1][k] == short[0]) {                     // check if trasnaltion is short or long
+                            Serial.print("short");
+                            while (!TurnOnLed(400, true));                              // led on, delay=400ms
+                        }
+
+                        else {
+                            Serial.print("long");
+                            while (!TurnOnLed(1200, true));                             // led on, delay = 1200ms
+                        }
+                    }
+                    Serial.println();
+                    TurnOnLed(1200, false);                                             // delay between letters
+                }
+                break;
+            }
+        }
+    }
+    TurnOnLed(1200, false);                                                             // pause time after end of word
+}
+
+
+    bool Traducteur::TurnOnLed(int period, bool ledState) {
+        currentTime = millis();
+        if ((currentTime - previousTime) > period) {   
+            previousTime = currentTime;
+            digitalWrite(LED_BUILTIN, ledState);                                        // led on or led off
+            return true;
+        }
+        return false;
+    }
+}
