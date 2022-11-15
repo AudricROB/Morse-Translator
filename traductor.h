@@ -4,37 +4,37 @@ class Traductor {
 
 private:
     char charLetter;                                                //transform letter into array
-    const char short[2] = "c";                                      //short time
+    const char short[2] = "s";                                      //short time
     unsigned long currentTime = 0;                                  //use function millis
     unsigned long previousTime = 0;
     bool TurnOnLed(int period, bool ledState);
     String Traductorletter[27][2] = {                               //create array with letter and morseletter
-         {"a","cl"},
-         {"b","lccc"},
-         {"c","lclc"},
-         {"d","lcc"},
-         {"e","c"},
-         {"f","cclc"},
-         {"g","llc"},
-         {"h","cccc"},
-         {"i","cc"},
-         {"j","clll"},
-         {"k","lcl"},
-         {"l","clcc"},
+         {"a","sl"},
+         {"b","lsss"},
+         {"c","lsls"},
+         {"d","lss"},
+         {"e","s"},
+         {"f","ssls"},
+         {"g","ssc"},
+         {"h","ssss"},
+         {"i","ss"},
+         {"j","slll"},
+         {"k","lsl"},
+         {"l","slss"},
          {"m","ll"},
-         {"n","lc"},
+         {"n","ls"},
          {"o","lll"},
-         {"p","cllc"},
-         {"q","llcl"},
-         {"r","clc"},
-         {"s","ccc"},
+         {"p","slls"},
+         {"q","llsl"},
+         {"r","sls"},
+         {"s","sss"},
          {"t","l"},
-         {"u","ccl"},
-         {"v","cccl"},
-         {"w","cll"},
-         {"x","lccl"},
-         {"y","lcll"},
-         {"z","llcc"},
+         {"u","ssl"},
+         {"v","sssl"},
+         {"w","sll"},
+         {"x","lssl"},
+         {"y","lsll"},
+         {"z","llss"},
          {" ",""},
     };
 };
