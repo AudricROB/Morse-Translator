@@ -39,7 +39,7 @@ void Traductor::traductor(String word) {
 }
 
 
-    bool Traducteur::TurnOnLed(int period, bool ledState) {
+    bool Traductor::TurnOnLed(int period, bool ledState) {
         currentTime = millis();
         if ((currentTime - previousTime) > period) {   
             previousTime = currentTime;
