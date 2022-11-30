@@ -5,11 +5,7 @@
 class LettreMorse
 {
   private:
-<<<<<<< HEAD
-    int _pin;
     unsigned long currentTime;
-    char lettre;
-=======
     char lettre;
     void lettreA();
     void lettreB();
@@ -53,22 +49,19 @@ class LettreMorse
     void tiret();
     int _pin;
     unsigned long currentTime;
->>>>>>> master
+
     
 
   public:
     LettreMorse();
     LettreMorse(char lettre);
     LettreMorse(int pin);
-<<<<<<< HEAD
     void espace();
     void grand_espace();
     void point();
     void tiret();
     void blink();
-=======
     void clignoteLED();
->>>>>>> master
 };
 
 #endif

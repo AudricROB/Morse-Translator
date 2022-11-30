@@ -1,8 +1,5 @@
 #include "LettreMorse.h"
-<<<<<<< HEAD
 #include "pins_arduino.h"
-=======
->>>>>>> master
 #include <Arduino.h>
 
 
@@ -19,17 +16,13 @@ LettreMorse::LettreMorse()
   _pin = LED_BUILTIN;
 }
 
-<<<<<<< HEAD
 //définir le temps de clignotement de la LED pour un point
-=======
-
 LettreMorse::LettreMorse(char lettre)
 {
   this->lettre = lettre;
 }
 
 
->>>>>>> master
 void LettreMorse::point()
 {
   currentTime = millis();
@@ -42,11 +35,7 @@ void LettreMorse::point()
   }
 }
 
-<<<<<<< HEAD
 //définir le temps de clignotement de la LED pour un tiret
-=======
-
->>>>>>> master
 void LettreMorse::tiret()
 {
 currentTime = millis();
@@ -59,11 +48,7 @@ while (millis() < currentTime + 250) {
   }
 }
 
-<<<<<<< HEAD
 //définir le temps de clignotement de la LED pour l'espace entre les lettres
-=======
-
->>>>>>> master
 void LettreMorse::espace()
 {
 currentTime = millis();
@@ -72,11 +57,8 @@ while (millis() < currentTime + 750) {
   }
 }
 
-<<<<<<< HEAD
-//définir le temps de clignotement de la LED pour l'espace entre les mots
-=======
 
->>>>>>> master
+//définir le temps de clignotement de la LED pour l'espace entre les mots
 void LettreMorse::grand_espace()
 {
 currentTime = millis();
@@ -85,7 +67,7 @@ while (millis() < currentTime + 1750) {
   }
 }
 
-<<<<<<< HEAD
+
 //on appel la fonction blink qui nous sera utile pour faire clignoter la LED
 void LettreMorse::blink()
 {
@@ -96,7 +78,8 @@ LettreMorse::LettreMorse(char lettre)
 {
   this->lettre = lettre;
 }
-=======
+
+
 void LettreMorse::clignoteLED() {
 
 switch(this->lettre)
@@ -590,4 +573,4 @@ void LettreMorse::lettreZ()
     }
     tiret();
  }
->>>>>>> master
+
